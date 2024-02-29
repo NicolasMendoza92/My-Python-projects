@@ -65,7 +65,11 @@ def start():
         user_info.add_new_user(user_name, user_lastname, email)
         check_flights_for_users()      
     else:
-        print('Good bye ass hole')
-
+        sure = input('We will search for flights without user... Yes(Y): ').upper()
+        if sure == 'Y':
+            check_flights_for_users()
+        else:
+            print("Good Bye!")
+            
 
 start()
