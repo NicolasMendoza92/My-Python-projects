@@ -17,8 +17,8 @@ exercise_endpoint = 'https://trackapi.nutritionix.com/v2/natural/exercise'
 exercise_text = input("Tell me which exercises you did: ")
 
 headers = {
-    "x-app-id": os.getenv("APP_ID"),
-    "x-app-key": os.getenv("API_KEY"),
+    "x-app-id": os.getenv("APP_ID_NUTRIX"),
+    "x-app-key": os.getenv("API_KEY_NUTRIX"),
 }
 
 parameters = {
@@ -71,7 +71,7 @@ for exercise in result["exercises"]:
 
 
 # METODO POST PARA SHEETY , envio los parametros con Basic Authentication
-sheet_response = requests.post(sheety_endpoint, json=sheety_inputs, auth=(os.getenv("USER_SHEETY"), os.getenv("PASS_SHEETY")))
+sheet_response = requests.post(sheety_endpoint, json=sheety_inputs, auth=(os.getenv("USER_SHEETY_WORKTRACK"), os.getenv("PASS_SHEETY_WORKTRACK")))
 
 print(sheet_response.text)
 
